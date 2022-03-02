@@ -1,0 +1,23 @@
+Cash Register with Queue and log history inventory;
+
+Make inventory(admin)
+    add item 
+    decrease stock
+
+Make Cash Register
+    itemName
+    Price
+    Quantity
+ add to Queue
+
+Make Queue
+     void ticket
+     provide ticket to the customer 
+     show ticket what is serving 
+     remove in Queue when serve finish
+     add to log history
+
+make Log history (admin)
+    print log history (admin)
+    delete log history (admin)
+
