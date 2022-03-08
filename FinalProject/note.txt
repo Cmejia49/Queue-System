@@ -9,6 +9,9 @@ Make Cash Register
     Price
     Quantity
  add to Queue
+ input money
+ change
+ 
 
 Make Queue
      void ticket
@@ -21,3 +24,18 @@ make Log history (admin)
     print log history (admin)
     delete log history (admin)
 
+
+Screen 
+Admin Login 1
+mainmenu; 2
+keypadScreen 3
+
+Admin Screen 3 
+  List of item (can delete) 
+    Add item  4 
+    can check sale of the day 5
+
+todo 
+sale 
+save and cancel 
+logout

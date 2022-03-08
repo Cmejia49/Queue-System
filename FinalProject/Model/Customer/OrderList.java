@@ -1,42 +1,48 @@
 package Model.Customer;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class OrderList {
+public class OrderList extends Observable {
     
     private ArrayList<Order> list;
-    private double total;
+    private double total = 0.00;
     public OrderList() {
         list = new ArrayList<Order>();
     }
-
+    
+    private void orderListChanged(){
+        setChanged();
+        notifyObservers();
+    }
+    
     public void addOrder(Order order){
         list.add(order);
+        orderListChanged();
     }
-    public void getOrder(int id){
-        list.get(id);
+    public Order get(int id){
+        return list.get(id);
     }
     public void delete(int id){
         list.remove(id);
+        orderListChanged();
     }
-    public int length(){
+    public int size(){
        return list.size();
     }
     public void clear(){
         list.clear();
+        orderListChanged();
     }
     public double getTotal(){
-        for (Order order : list) {
-            total+=order.getSubtotal();
-        }
         return total;
     }
-    public String toString(){
-        String result = "";
+    public void setTotal(){
         for (Order order : list) {
-            result += order.toString() + ", ";
+            this.total+=order.getSubtotal();
         }
-
-        return "Ordered Food " + result ;
+        orderListChanged();
     }
+
+   
 }   

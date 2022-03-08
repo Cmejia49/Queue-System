@@ -4,8 +4,7 @@ import Model.Customer.Customer;
 import Model.Customer.CustomerQueu;
 import Model.Customer.Order;
 import Model.Customer.OrderList;
-
-public class CashRegController{
+public class CashRegController {
 
     private OrderList list;
     private CustomerQueu queu;
@@ -17,7 +16,6 @@ public class CashRegController{
     public void addCart(Order item) {
       
         list.addOrder(item);
-
     }
 
     public double getTotal(){
@@ -35,12 +33,7 @@ public class CashRegController{
         queu.addQueu(customer);
         
     }
-    public String serving(){
-        return "Serving " + queu.peekTop();
-    }
-    public String served() {
-       
-        return "Thank you " + queu.removeQueu();
-    }
+
+
     
 }
